@@ -7,11 +7,12 @@ import prepareHateoas from "../helpers/hateoas.js";
 const read = async (req, res) => {
 
   try {
-    const joyas = await joyaModel.getAll();
+    const { order_by, limits, page } = req.query;
+    const joyas = await joyaModel.getAll(order_by, limits, page);
     return res.status(200).json(joyas);
 
   } catch (error) {
-    console.log(error);
+    console.log("error", error);
     if (error.code) {
       const { code, message } = getDatabaseError(error.code);
       return res.status(code).json({ message });
