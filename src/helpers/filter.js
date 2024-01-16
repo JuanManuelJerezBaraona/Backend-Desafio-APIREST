@@ -1,8 +1,11 @@
 const createQuery = (entity, filters) => {
+  if (!filters) {
+    throw new Error('No se proporcionaron filtros para createQuery');
+  }
     // **********esto lo podriamos llevar a un metodo ?? para que todas las tablas lo usen, podriamos paginarlo??  ******
   // Inicializar la consulta base
   const table = entity.toLowerCase();
-  let query = `SELECT * FROM ${table}  WHERE 1 = 1`;
+  let query = `SELECT * FROM ${table} WHERE 1 = 1`;
 
   // La expresión 1 = 1 es simplemente una condición que siempre es verdadera. Se utiliza comúnmente 
   // como truco en la construcción de consultas SQL dinámicas para simplificar la lógica.

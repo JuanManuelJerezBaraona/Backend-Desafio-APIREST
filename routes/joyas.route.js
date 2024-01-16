@@ -6,4 +6,7 @@ const router = Router();
 // GET /joyas
 router.get("/", joyasController.read);
 
+// GET /joyas/filtros
+router.get("/filtros", joyasController.readFiltered);
+
 export default router;
