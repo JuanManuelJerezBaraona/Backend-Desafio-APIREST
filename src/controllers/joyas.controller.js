@@ -10,7 +10,7 @@ const read = async (req, res) => {
     const { order_by, limits, page } = req.query;
     const joyas = await joyaModel.getAll(order_by, limits, page);
     const joyasWithHateoas = await prepareHateoas("joyas", joyas);
-    return res.status(200).json({joyas: joyasWithHateoas});
+    return res.status(200).json(joyasWithHateoas);
 
   } catch (error) {
     console.log("error", error);

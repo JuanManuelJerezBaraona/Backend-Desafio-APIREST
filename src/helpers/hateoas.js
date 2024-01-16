@@ -1,15 +1,19 @@
 const prepareHateoas = async (entity, data) => {
     const results = data
-      .map((v) => {
+      .map((joya) => {
         return {
-          name: v.nombre,
-          href: `/${entity}/${v.id}`,
+          name: joya.nombre,
+          href: `/${entity}/joya/${joya.id}`,
         };
       })
       .slice(0, 4);
-    const total = data.length;
+
+    const totalJoyas = data.length;
+    const stockTotal = data.reduce((accumulator, value) => accumulator + value.stock, 0);
+
     const HATEOAS = {
-      total,
+      totalJoyas,
+      stockTotal,
       results,
     };
     return HATEOAS;
