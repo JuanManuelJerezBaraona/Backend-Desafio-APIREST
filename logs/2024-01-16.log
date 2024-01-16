@@ -2,3 +2,7 @@
 Started GET /joyas for :: ::1 at Tue Jan 16 2024 13:44:12 GMT-0300 (hora de verano de Chile)
   Parameters in body: {}
 Completed: 200 message:  Time response: 49 ms Request ID: [b5451566-114c-44aa-b454-54716a061eb8]
+
+Started GET /joyas for :: ::1 at Tue Jan 16 2024 14:01:02 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 10 ms Request ID: [5684b283-fe6d-4922-98bf-76844eb0fdf8]
