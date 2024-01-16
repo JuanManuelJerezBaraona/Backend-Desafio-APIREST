@@ -66,3 +66,15 @@ Completed: 500 message:  Time response: 16 ms Request ID: [b4a535f7-39d5-4d82-af
 Started GET /joyas?limits=1&page=2 for :: ::1 at Tue Jan 16 2024 14:16:40 GMT-0300 (hora de verano de Chile)
   Parameters in body: {}
 Completed: 200 message:  Time response: 42 ms Request ID: [ec0c1cb9-9896-4ee4-b6d6-e496efd4660d]
+
+Started GET /joyas?limits=6&page=1&order_by=precio_ASC for :: ::1 at Tue Jan 16 2024 14:18:55 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 42 ms Request ID: [5c964ceb-f823-470b-b82b-8856d289d6f3]
+
+Started GET /joyas?limits=6&page=1&order_by=precio_DESC for :: ::1 at Tue Jan 16 2024 14:19:04 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 3 ms Request ID: [95273226-48fd-46df-b628-ee083f09c166]
+
+Started GET /joyas?limits=6&page=1&order_by=precio_DESC for :: ::1 at Tue Jan 16 2024 14:23:04 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 11 ms Request ID: [68744c6b-7ea8-424b-b2bd-ee790ff611ba]
