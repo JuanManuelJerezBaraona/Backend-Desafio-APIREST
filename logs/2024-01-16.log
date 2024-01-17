@@ -250,3 +250,7 @@ Completed: 200 message:  Time response: 2 ms Request ID: [09e8eda2-afee-46f7-bf7
 Started GET /joyas?limits=3&page=2&order_by=stock_ASC for :: ::1 at Tue Jan 16 2024 19:06:17 GMT-0300 (hora de verano de Chile)
   Parameters in body: {}
 Completed: 200 message:  Time response: 3 ms Request ID: [b2999d71-edfe-4a13-83c3-3766620443a6]
+
+Started GET /joyas?limits=3&page=2&order_by=stock_ASC for :: ::1 at Tue Jan 16 2024 19:09:57 GMT-0300 (hora de verano de Chile)
+  Parameters in body: {}
+Completed: 200 message:  Time response: 55 ms Request ID: [f84da7c7-edc6-4654-88a6-a8b0de186d3c]

@@ -13,38 +13,36 @@ const getAll = async (order_by = "id_ASC", limits = 5, page = 1) => {
         limits,
         offset
     );
-    // console.log("query: ", formattedQuery);
     const response = await pool.query(formattedQuery);
-    // console.log("response", response);
     return response.rows;
 };
 
-const getAllFiltered = async (precio_max, precio_min, categoria, metal) => {
-    // const { query, values } = createQuery("inventario", filters);
-    // const result = await pool.query(query, values);
-    // return result.rows;
-    let filtros = []
-    const values = []
+const getAllFiltered = async (filters) => {
+    // let filtros = []
+    // const values = []
 
-    const agregarFiltro = (campo, comparador, valor) => {
-        values.push(valor)
-        const { length } = filtros
-        filtros.push(`${campo} ${comparador} $${length + 1}`)
-    }
+    // const agregarFiltro = (campo, comparador, valor) => {
+    //     values.push(valor)
+    //     const { length } = filtros
+    //     filtros.push(`${campo} ${comparador} $${length + 1}`)
+    // }
 
-    if (precio_max) agregarFiltro('precio', '<=', precio_max)
-    if (precio_min) agregarFiltro('precio', '>=', precio_min)
-    if (categoria) agregarFiltro('categoria', '=', categoria)
-    if (metal) agregarFiltro('metal', '=', metal)
+    // if (precio_max) agregarFiltro('precio', '<=', precio_max)
+    // if (precio_min) agregarFiltro('precio', '>=', precio_min)
+    // if (categoria) agregarFiltro('categoria', '=', categoria)
+    // if (metal) agregarFiltro('metal', '=', metal)
 
-    let consulta = "SELECT * FROM inventario"
-    if (filtros.length > 0) {
-        filtros = filtros.join(" AND ")
-        consulta += ` WHERE ${filtros}`
-    }
+    // let consulta = "SELECT * FROM inventario"
+    // if (filtros.length > 0) {
+    //     filtros = filtros.join(" AND ")
+    //     consulta += ` WHERE ${filtros}`
+    // }
 
-    const { rows: inventario } = await pool.query(consulta, values)
-    return inventario
+    // const { rows: inventario } = await pool.query(consulta, values)
+    // return inventario
+    const { query, values } = createQuery("inventario", filters);
+    const response = await pool.query(query, values);
+    return response.rows;
 }
 
 export const joyaModel = {

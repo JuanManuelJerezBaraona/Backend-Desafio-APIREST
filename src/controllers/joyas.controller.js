@@ -24,8 +24,8 @@ const read = async (req, res) => {
 const readFiltered = async (req, res) => {
     try {
         const { precio_max, precio_min, categoria, metal } = req.query;
-
-        const joyas = await joyaModel.getAllFiltered(precio_max, precio_min, categoria, metal);
+        const filters = { precio_max, precio_min, categoria, metal };
+        const joyas = await joyaModel.getAllFiltered(filters);
         // const paginationData = pagination(joyas, items, page);
         res.status(200).json(joyas);
     } catch (error) {
