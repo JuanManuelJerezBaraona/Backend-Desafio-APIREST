@@ -21,6 +21,21 @@ const read = async (req, res) => {
     }
 };
 
+const readById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const joya = await joyaModel.getById(id);
+        res.status(200).json(joya);
+    } catch (error) {
+        console.log("error", error);
+        if (error.code) {
+        const { code, message } = getDatabaseError(error.code);
+        return res.status(code).json({ message });
+        }
+        return res.status(500).json({ message: "Internal server error" });
+    }
+};
+
 const readFiltered = async (req, res) => {
     try {
         const { precio_max, precio_min, categoria, metal } = req.query;
@@ -40,5 +55,6 @@ const readFiltered = async (req, res) => {
 
 export const joyasController = {
     read,
+    readById,
     readFiltered
 };
