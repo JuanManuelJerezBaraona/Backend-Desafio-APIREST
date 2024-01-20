@@ -16,7 +16,7 @@ const read = async (req, res) => {
         const { code, message } = getDatabaseError(error.code);
         return res.status(code).json({ message });
         }
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "🔥 Internal server error 🔥" });
     }
 };
 
@@ -32,7 +32,7 @@ const readById = async (req, res) => {
         const { code, message } = getDatabaseError(error.code);
         return res.status(code).json({ message });
         }
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "🔥 Internal server error 🔥" });
     }
 };
 
@@ -49,7 +49,7 @@ const readFiltered = async (req, res) => {
         const { code, message } = getDatabaseError(error.code);
         return res.status(code).json({ message });
         }
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "🔥 Internal server error 🔥" });
     }
 }
 
