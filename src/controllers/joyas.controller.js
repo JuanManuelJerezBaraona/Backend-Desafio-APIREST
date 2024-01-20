@@ -1,7 +1,6 @@
 import { joyaModel } from "../models/joya.model.js";
 
 import { getDatabaseError } from "../helpers/database.error.js";
-import pagination from "../helpers/paginator.js";
 import prepareHateoas from "../helpers/hateoas.js";
 
 const read = async (req, res) => {
@@ -26,6 +25,7 @@ const readById = async (req, res) => {
         const { id } = req.params;
         const joya = await joyaModel.getById(id);
         res.status(200).json(joya);
+
     } catch (error) {
         console.log("error", error);
         if (error.code) {
@@ -41,8 +41,8 @@ const readFiltered = async (req, res) => {
         const { precio_max, precio_min, categoria, metal } = req.query;
         const filters = { precio_max, precio_min, categoria, metal };
         const joyas = await joyaModel.getAllFiltered(filters);
-        // const paginationData = pagination(joyas, items, page);
         res.status(200).json(joyas);
+
     } catch (error) {
         console.log("error", error);
         if (error.code) {
